@@ -13,3 +13,10 @@ var bio = {
 	"skills": ["HTML5", "CSS", "Bootstrap", "Photoshop", "illustrator", "Javascript", "Final Cut"],
 	"bioPic": "img/logo.png"
 };
+
+var name = "Riccardo Salucco";
+var myRole = "Front-End Web Developer";
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderRole.replace("%data%", myRole);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
