@@ -5,10 +5,10 @@ var bio = {
 	"contacts": {
 		"email": "<a href='mailto:riccardo.salucco@gmail.com'>riccardo.salucco@gmail.com</a>",
 		"github": "<a href='https://github.com/notthatred'>notthatred</a>",
-		"twitter": "<a href='https://twitter.com/RSalucco'>twitter</a>",
+		"twitter": "<a href='https://twitter.com/RSalucco'>@RSalucco</a>",
 		"linkedIn": "<a href='https://it.linkedin.com/in/riccardosalucco'>View Profile</a>",
 		"blog": "<a href=''>notthatred.com</a>",
-		"location": "<a href='#'>Firenze, Italia</a>"
+		"location": "<a href=''>Firenze, Italia</a>"
 	},
 	"welcomeMessage": "Welcome!",
 	"skills": ["HTML5", "CSS", "Bootstrap", "Photoshop", "Illustrator", "Javascript", "User Experience", "Final Cut", "After Effects"],
@@ -20,42 +20,42 @@ var work = {
 		{
 			"employer": "Freelance",
 			"title": "Graphic Design Consultant",
-			"location": "Firenze, Italy",
+			"location": "Firenze, Italia",
 			"datesWorked": "September 2011 - Present",
 			"description": "Creation of graphics, user interfaces, templates and layouts for use in design, print and web projects."
 		},
 		{
 			"employer": "Rebus Multimedia",
 			"title": "Graphic Design Consultant",
-			"location": "Firenze, Italy",
+			"location": "Firenze, Italia",
 			"datesWorked": "September 2011 - Present",
 			"description": "Creation of graphics, user interfaces, templates and layouts for use in design, print and web projects."
 		},
 		{
 			"employer": "Centro Studi Pluriversum",
 			"title": "Computer Science Teacher and Tutor",
-			"location": "Figline Valdarno - Borgo San Lorenzo - Pontassieve, Italy",
+			"location": "Figline Valdarno, Italia",
 			"datesWorked": "September 2013 - February 2015",
 			"description": "Teacher and Tutor for Progetto TRIO labs in the Web Learning Points of Florence Area."
 		},
 		{
 			"employer": "IAL Toscana",
 			"title": "Computer Science Teacher and Tutor",
-			"location": "Figline Valdarno - Borgo San Lorenzo - Pontassieve, Italy",
+			"location": "Figline Valdarno, Italia",
 			"datesWorked": "September 2013 - February 2015",
 			"description": "Teacher and Tutor for Progetto TRIO labs in the Web Learning Points of Florence Area."
 		},
 		{
 			"employer": "Substitute Tutor",
 			"title": "Computer Science Teacher and Tutor",
-			"location": "Siena - Poggibonsi, Italy",
+			"location": "Siena, Italia",
 			"datesWorked": "December 2012 - February 2015",
 			"description": "Substitute Tutor for Progetto TRIO courses in the Web Learning Points of Siena Area."
 		},
 		{
 			"employer": "Qu.In Srl",
 			"title": "Computer Science Teacher and Tutor",
-			"location": "Empoli - Castelfiorentino, Italy",
+			"location": "Empoli, Italia",
 			"datesWorked": "April 2013 - September 2013",
 			"description": "Teacher and tutor for IT courses, Microsoft Excel: basic, intermediate, advanced, Microsoft Word: basic, intermediate, " +
 			"advanced in Empoli and Castelfiorentino."
@@ -63,7 +63,7 @@ var work = {
 		{
 			"employer": "Iris Multimedia Pro Srl",
 			"title": "Graphic Designer",
-			"location": "Firenze, Italy",
+			"location": "Firenze, Italia",
 			"datesWorked": "May 2010 - September 2011",
 			"description": "I was responsible of design graphic and web content in this media production startup." +
 			"We've worked on many projects for Italian TV channels, private brands and ADV agencies."
@@ -71,7 +71,7 @@ var work = {
 		{
 			"employer": "Freelance",
 			"title": "Graphic Consultant",
-			"location": "Firenze, Italy",
+			"location": "Firenze, Italia",
 			"datesWorked": "October 2007 - April 2010",
 			"description": "I've worked with many companies that operates in different sectors like: "+ 
 			"Design, Marketing, Advertising, IT, Tourism, Art, Music and Engineering."
@@ -84,15 +84,18 @@ var education = {
 		{ 
 			"name": "SSTI",
 			"datesAttended": "2009 - 2010",
-			"location": "Firenze, Italy",
+			"location": "Firenze, Italia",
 			"degree": "GPTI 2009: Production and Industrial’s Technologies Management – Information’s System Management",
-			"major": "Graduated in Cisco System IT ESSENTIAL &  CCNA Exploration courses"
+			"major": "Graduated in Cisco System IT ESSENTIAL &  CCNA Exploration courses",
+			"url": ""
 		},
 		{ 
 			"name": "Università degli studi di Firenze",
 			"datesAttended": "2004 - 2006",
-			"location": "Firenze, Italy",
-			"major": "Communications"
+			"location": "Firenze, Italia",
+			"degree" : "",
+			"major": "Communications",
+			"url": ""
 		}		
 	],
 	"onlineCourses": [
@@ -264,7 +267,6 @@ projects.display = function() {
 projects.display();
 
 //Setting a function to Display Education
-
 education.display = function() {
 	if(education.schools.length > 0 || education.onlineCourses.length > 0) {
 		for(i in education.schools) {
@@ -281,10 +283,12 @@ education.display = function() {
 			$(".education-entry:last").append(formattedSchoolLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
 		}
-
+		
 		$("#education").append(HTMLonlineClasses);
+
 		for(i in education.onlineCourses) {
 			$("#education").append(HTMLschoolStart);
+
 			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
 			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 			var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].completed);
@@ -298,3 +302,6 @@ education.display = function() {
 }
 
 education.display();
+
+//Map
+$("#mapDiv").append(googleMap);
