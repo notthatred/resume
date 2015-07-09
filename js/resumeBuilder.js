@@ -202,3 +202,30 @@ function displaySkillsandContacts() {
 }
 
 displaySkillsandContacts();
+
+function displayWork() {
+
+	if(work.jobs.length > 0) {
+	
+		$("#workExperience").append(HTMLworkStart);
+
+		for(i in work.jobs) {
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+			var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
+			var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+
+			var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
+
+			$(".work-entry:last").append(formattedEmployerWorkTitle);
+			$(".work-entry:last").append(formattedWorkLocation);
+			$(".work-entry:last").append(formattedDatesWorked);
+			$(".work-entry:last").append(formattedWorkDescription);
+		}
+
+	}
+
+}
+
+displayWork();
