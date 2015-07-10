@@ -1,14 +1,16 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .clearfix {
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.education-entry,
+.work-entry,
+.project-entry {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -38,7 +40,7 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   line-height: 17px;
 }
 
@@ -47,7 +49,6 @@ h2, h3, h4, h5 {
   padding-left: 5%;
   padding-right: 5%;
 }
-
 
 .date-text {
   font-style: italic;
@@ -63,7 +64,6 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -73,7 +73,7 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -81,7 +81,7 @@ a {
 
 span {
   padding: 5px;
-  color: #FFF;
+  color: #fff;
 }
 
 em {
@@ -91,30 +91,30 @@ em {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   line-height: 28px;
 }
 
-#skillsH3 {
-  color: #F5AE23;
+.skillsH3 {
+  color: #f5ae23;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #f5ae23;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #f5ae23;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
@@ -127,8 +127,7 @@ em {
   color: #161017;
 }
 
-/* TODO: Replace with image later */
-#header {
+.bg-header {
   background-color: #161017;
 }
 
@@ -163,12 +162,12 @@ img {
   padding: 10px;
 }
 
-#letsConnect {
+.text-centered {
   text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
-  #letsConnect {
+  .margin-1024 {
     margin-top: 5%;
   }
 }
@@ -180,7 +179,7 @@ img {
 }
 
 @media only screen and (max-width: 750px) {
-  #letsConnect {
+  .margin-750 {
     margin-top: 10%;
   }
   .biopic {
@@ -191,21 +190,21 @@ img {
   }
 }
 
-#map {
+.map {
   display: block;
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-#mapDiv {
+.mapDiv {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
-  #skillsH3,
+  .skillsH3,
   .biopic {
     display: block;
   }
