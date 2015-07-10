@@ -1,4 +1,5 @@
-// Set JSON Bio, Work, Projects and Education
+// Set Bio
+
 var bio = {
 	"name": "Riccardo Salucco",
 	"role": "Front-End Web Developer",
@@ -11,9 +12,47 @@ var bio = {
 		"location": "<a href=''>Firenze, Italia</a>"
 	},
 	"welcomeMessage": "Welcome!",
-	"skills": ["HTML5", "CSS", "Bootstrap", "Photoshop", "Illustrator", "Javascript", "User Experience", "Final Cut", "After Effects"],
+	"skills": ["HTML5", "CSS", "Bootstrap", "Wordpress", "PHP", "Javascript", "JQuery", "User Experience", "Photoshop", "Illustrator", "Final Cut", "After Effects" ],
 	"bioPic": "img/logo.png"
 };
+
+//Append Name and role
+
+var name = "Riccardo Salucco";
+var myRole = "Front-End Web Developer";
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderRole.replace("%data%", myRole);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedBioPic);
+
+//Setting a function to Display Skills and Contacts
+
+var formattedContacts = [];
+formattedContacts.push(HTMLemail.replace("%data%", bio.contacts.email));
+formattedContacts.push(HTMLgithub.replace("%data%", bio.contacts.github));
+formattedContacts.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+formattedContacts.push(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn));
+formattedContacts.push(HTMLblog.replace("%data%", bio.contacts.blog));
+formattedContacts.push(HTMLlocation.replace("%data%", bio.contacts.location));
+
+function displaySkillsandContacts() {
+	if(bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+		for(i in bio.skills) {
+			$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+		}
+	}
+
+	for(i in formattedContacts) {
+		$("#topContacts").append(formattedContacts[i]);
+		$("#footerContacts").append(formattedContacts[i]);
+	}	
+}
+
+//Set Work Experiences
 
 var work = {
 	"jobs": [
@@ -78,6 +117,35 @@ var work = {
 		}
 	]
 };
+
+//Setting a function to Display Work Experiences
+
+function displayWork() {
+
+	if(work.jobs.length > 0) {
+	
+		$("#workExperience").append(HTMLworkStart);
+
+		for(i in work.jobs) {
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+			var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
+			var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+
+			var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
+
+			$(".work-entry:last").append(formattedEmployerWorkTitle);
+			$(".work-entry:last").append(formattedWorkLocation);
+			$(".work-entry:last").append(formattedDatesWorked);
+			$(".work-entry:last").append(formattedWorkDescription);
+		}
+
+	}
+
+}
+
+//Set Education
 
 var education = {
 	"schools": [
@@ -144,128 +212,6 @@ var education = {
 	]
 };
 
-var projects = {
-	"projects": [
-		{
-			"title": "Resume",
-			"datesWorked": "July 2015",
-			"description": "Created an online resume as second project of Udacity's " +
-			"Front-End Web Developer Nanodegree.",
-			"images": [""],
-			"url": ""
-		},
-		{
-			"title": "Online Portfolio",
-			"datesWorked": "June 2015",
-			"description": "Created an online portfolio of work as first project of Udacity's " +
-			"Front-End Web Developer Nanodegree.",
-			"images": [""],
-			"url": ""
-		},
-		{
-			"title": "notthatred",
-			"datesWorked": "January 2015",
-			"description": "Just a simple blog.",
-			"images": ["images/web.jpg"],
-			"url": "http://www.notthatred.com/"
-		}
-	]
-};
-
-//Append Name and role
-
-var name = "Riccardo Salucco";
-var myRole = "Front-End Web Developer";
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", myRole);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedBioPic);
-
-//Setting a function to Display Skills and Contacts
-
-var formattedContacts = [];
-formattedContacts.push(HTMLemail.replace("%data%", bio.contacts.email));
-formattedContacts.push(HTMLgithub.replace("%data%", bio.contacts.github));
-formattedContacts.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-formattedContacts.push(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn));
-formattedContacts.push(HTMLblog.replace("%data%", bio.contacts.blog));
-formattedContacts.push(HTMLlocation.replace("%data%", bio.contacts.location));
-
-function displaySkillsandContacts() {
-	if(bio.skills.length > 0) {
-		$("#header").append(HTMLskillsStart);
-		for(i in bio.skills) {
-			$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
-		}
-	}
-
-	for(i in formattedContacts) {
-		$("#topContacts").append(formattedContacts[i]);
-		$("#footerContacts").append(formattedContacts[i]);
-	}	
-}
-
-displaySkillsandContacts();
-
-//Setting a function to Display Work Experiences
-
-function displayWork() {
-
-	if(work.jobs.length > 0) {
-	
-		$("#workExperience").append(HTMLworkStart);
-
-		for(i in work.jobs) {
-			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-			var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
-			var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-
-			var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
-
-			$(".work-entry:last").append(formattedEmployerWorkTitle);
-			$(".work-entry:last").append(formattedWorkLocation);
-			$(".work-entry:last").append(formattedDatesWorked);
-			$(".work-entry:last").append(formattedWorkDescription);
-		}
-
-	}
-
-}
-
-displayWork();
-
-//Setting a function to Display Projects
-
-projects.display = function() {
-	if(projects.projects.length > 0) {
-		for(i in projects.projects) {
-			$("#projects").append(HTMLprojectStart);
-
-			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
-			var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
-			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
-
-			$(".project-entry:last").append(formattedProjectTitle);
-			$(".project-entry:last").append(formattedProjectDates);
-			$(".project-entry:last").append(formattedProjectDescription);
-
-			for(img in projects.projects[i].images) {
-				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
-				$(".project-entry:last").append(formattedProjectImage);
-			}
-			
-
-		}
-	}
-}
-
-projects.display();
-
 //Setting a function to Display Education
 education.display = function() {
 	if(education.schools.length > 0 || education.onlineCourses.length > 0) {
@@ -301,7 +247,71 @@ education.display = function() {
 	}
 }
 
+//Set Projects
+
+var projects = {
+	"projects": [
+		{
+			"title": "Resume",
+			"datesWorked": "July 2015",
+			"description": "Created an online resume as second project of Udacity's " +
+			"Front-End Web Developer Nanodegree.",
+			"images": [""],
+			"url": ""
+		},
+		{
+			"title": "Online Portfolio",
+			"datesWorked": "June 2015",
+			"description": "Created an online portfolio of work as first project of Udacity's " +
+			"Front-End Web Developer Nanodegree.",
+			"images": [""],
+			"url": ""
+		},
+		{
+			"title": "notthatred",
+			"datesWorked": "January 2015",
+			"description": "Just a simple blog.",
+			"images": ["images/web.jpg"],
+			"url": "http://www.notthatred.com/"
+		}
+	]
+};
+
+//Setting a function to Display Projects
+
+projects.display = function() {
+	if(projects.projects.length > 0) {
+		for(i in projects.projects) {
+			$("#projects").append(HTMLprojectStart);
+
+			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
+			var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
+			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+
+			$(".project-entry:last").append(formattedProjectTitle);
+			$(".project-entry:last").append(formattedProjectDates);
+			$(".project-entry:last").append(formattedProjectDescription);
+
+			for(img in projects.projects[i].images) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+				$(".project-entry:last").append(formattedProjectImage);
+			}
+			
+
+		}
+	}
+}
+
+//Display all
+
+displaySkillsandContacts();
+displayWork();
+projects.display();
 education.display();
 
 //Map
+
 $("#mapDiv").append(googleMap);
+
+//Skill Chart
+
