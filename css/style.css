@@ -31,7 +31,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #484848;
   line-height: 22px;
 }
 
@@ -79,6 +79,15 @@ a {
   display: block;
 }
 
+span {
+  padding: 5px;
+  color: #FFF;
+}
+
+em {
+  color:#484848;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -110,13 +119,17 @@ a {
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4A4A4A;
+.not-gray {
+  background-color: #161017;
+}
+
+.not-so-gray {
+  color: #161017;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #161017;
 }
 
 .flex-box {
@@ -148,22 +161,6 @@ ul {
 
 img {
   padding: 10px;
-}
-
-/* Bar chart stuff */
-.chart div {
-  font: 10px sans-serif;
-  background-color: #4A4A4A;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  height: 12px;
-  color: white;
-  display: inline-block;
-}
-
-span {
-  padding: 5px;
 }
 
 #letsConnect {
