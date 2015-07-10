@@ -2,7 +2,7 @@
 
 var bio = {
 	"name": "Riccardo Salucco",
-	"role": "Front-End Web Developer",
+	"role": "Graphic Designer and Web Dev",
 	"contacts": {
 		"email": "<a href='mailto:riccardo.salucco@gmail.com'>riccardo.salucco@gmail.com</a>",
 		"github": "<a href='https://github.com/notthatred'>notthatred</a>",
@@ -12,7 +12,7 @@ var bio = {
 		"location": "<a href=''>Firenze, Italia</a>"
 	},
 	"welcomeMessage": "Welcome!",
-	"skills": ["HTML5", "CSS", "Bootstrap", "Wordpress", "PHP", "Javascript", "JQuery", "User Experience", "Photoshop", "Illustrator", "Final Cut", "After Effects" ],
+	"skills": ["HTML", "CSS", "Bootstrap", "Wordpress", "Javascript", "JQuery", "User Experience", "PHP", "Photoshop", "Illustrator", "Final Cut", "After Effects" ],
 	"bioPic": "img/logo.png"
 };
 
@@ -264,14 +264,14 @@ var projects = {
 			"datesWorked": "June 2015",
 			"description": "Created an online portfolio of work as first project of Udacity's " +
 			"Front-End Web Developer Nanodegree.",
-			"images": [""],
+			"images": ["img/portfolio.jpg"],
 			"url": ""
 		},
 		{
 			"title": "notthatred",
 			"datesWorked": "January 2015",
 			"description": "Just a simple blog.",
-			"images": ["images/web.jpg"],
+			"images": ["img/notthatred.jpg"],
 			"url": "http://www.notthatred.com/"
 		}
 	]
@@ -312,6 +312,3 @@ education.display();
 //Map
 
 $("#mapDiv").append(googleMap);
-
-//Skill Chart
-
